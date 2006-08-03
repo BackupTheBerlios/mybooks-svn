@@ -5,7 +5,7 @@
  * In dieser Datei werden alle Konstanten definiert welche zur benutzung von
  * myBooks notwendig sind, so dass nur diese Datei nach der Installation
  * verändert werden muss.
- *
+ *cvcxvcxvxcvcxv
  * PHP versions only tested with 5
  *
  * LICENSE: This source file is subject to version 3.0 of the PHP license
