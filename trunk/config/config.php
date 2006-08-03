@@ -18,7 +18,7 @@
  * @author     Fabian Mruck <norge@berlios.de>
  * @copyright  2006 Fabian Mruck
  * @license    http://opensource.org/licenses/gpl-license.php GNU Public License
- * @version    CVS: $Id:$
+ * @version    SVN: $Id$
  */
 
 //Definieren der Amazon ID welche man bei Amazon Web Services bekommt
