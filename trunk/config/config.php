@@ -6,13 +6,12 @@
  * myBooks notwendig sind, so dass nur diese Datei nach der Installation
  * verändert werden muss.
  *
- * PHP versions only tested with 5
+ * PHP Version nur mit Version 5 getestet
  *
- * LICENSE: This source file is subject to version 3.0 of the PHP license
- * that is available through the world-wide-web at the following URI:
- * http://www.gnu.org/copyleft/gpl.html.  If you did not receive a copy of
- * the GPL License and are unable to obtain it through the web, please
- * send a note to gnu@gnu.org so we can mail you a copy immediately.
+ * Lizens: Diese Datei wurde unter der GNU Public License lizensiert, diese
+ * liegt in der Datei COPYING im Hauptverzeichnis wenn sie die Datei nicht
+ * mit erhalten haben, ist sie unter http://www.gnu.org/copyleft/gpl.html
+ * zu finden.
  *
  * @package    myBooks
  * @author     Fabian Mruck <norge@berlios.de>
