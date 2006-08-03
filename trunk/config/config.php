@@ -29,5 +29,17 @@ define("URL", 'http://example.com');
 //Definieren des Serverpfades
 define("PATH", '/var/htdocs');
 
+//Definieren des Hostnamens der Datenbank
+define("MYSQL_HOST", 'mysql.example.com');
+
+//Definieren des Serverpfades
+define("MYSQL_USER", 'mysqluser');
+
+//Definieren des Serverpfades
+define("MYSQL_DATABASE", 'mysqldatabase');
+
+//Definieren des Serverpfades
+define("MYSQL_PASSWORD", 'mysqlpassword');
+
 
 ?>

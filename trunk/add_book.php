@@ -18,8 +18,8 @@
  * @license    http://opensource.org/licenses/gpl-license.php GNU Public License
  * @version    SVN: $Id:s$
  */
-require_once('/include/isbn.php');
-require_once('/include/main.php');
+require_once('includes/isbn.php');
+require_once('includes/main.php');
 
 echo '<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
@@ -36,41 +36,67 @@ echo '<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
 
 $ISBN_ein = $_GET['isbn'];
 if (!$ISBN_ein){
-    $ISBN_ein = "9783897212138";
+    $GLOBALS[ERROR] = "Bitte geben Sie eine ISBN ein!";
 }
+
 $ISBN = isbn_clear($ISBN_ein);
 
-$url  = "http://webservices.amazon.de/onca/xml";
+if (substr($ISBN, 0, 1)) {
+
+}
+switch (substr($ISBN, 0, 1)) {
+    case 3:
+        $ISBN_lang = "de";;
+
+        break;
+    case 0:
+        $ISBN_lang = "com";;
+        break;
+    case 1:
+        $ISBN_lang = "com";;
+        break;
+    default:
+        break;
+}
+$ISBN_lang = "de";
+
+$url  = "http://webservices.amazon.";
+$url .= $ISBN_lang;
+$url .= "/onca/xml";
 $url .= "?Service=AWSECommerceService";
-$url .= "&SubscriptionId=17155194708692CTJJ82";
+$url .= "&SubscriptionId=";
+$url .= AMAZONID;
 $url .= "&Operation=ItemLookup";
-$url .= "&ItemId=".$ISBN;
+$url .= "&ItemId=";
+$url .= $ISBN;
 $url .= "&MerchantId=All";
 $url .= "&ResponseGroup=Medium,ItemAttributes,EditorialReview,Reviews";
 
 
-$xml = simplexml_load_file($file);
+$xml = simplexml_load_file($url);
 
 $xml1 = simplexml2array($xml);
 
+
+/*
 echo '<a href="'.$xml1[Items][Item][DetailPageURL].'">Buch bei Amazon kaufen</a><br />';
 if ($xml1[Items][Item][LargeImage][URL]){
-    if (!file_exists("/kunden/115002_90607/buch/images/large/$ISBN.jpg")) {
-    copy($xml1[Items][Item][LargeImage][URL], "/kunden/115002_90607/buch/images/large/$ISBN.jpg");
+    if (!file_exists("/kunden/115002_90607/buch/mybooks/images/large/$ISBN.jpg")) {
+        copy($xml1[Items][Item][LargeImage][URL], "/kunden/115002_90607/buch/mybooks/images/large/$ISBN.jpg");
     }
-    echo '<img src="http://book.fabi.ws/images/large/'.$ISBN.'.jpg" alt="'.$ISBN.'" />';
+    echo '<img src="http://book.fabi.ws/mybooks/images/large/'.$ISBN.'.jpg" alt="'.$ISBN.'" />';
 }
 if ($xml1[Items][Item][MediumImage][URL]){
-    if (!file_exists("/kunden/115002_90607/buch/images/medium/$ISBN.jpg")) {
-    copy($xml1[Items][Item][MediumImage][URL], "/kunden/115002_90607/buch/images/medium/$ISBN.jpg");
+    if (!file_exists("/kunden/115002_90607/buch/mybooks/images/medium/$ISBN.jpg")) {
+        copy($xml1[Items][Item][MediumImage][URL], "/kunden/115002_90607/buch/mybooks/images/medium/$ISBN.jpg");
     }
-    echo '<img src="http://book.fabi.ws/images/medium/'.$ISBN.'.jpg" alt="'.$ISBN.'" />';
+    echo '<img src="http://book.fabi.ws/mybooks/images/medium/'.$ISBN.'.jpg" alt="'.$ISBN.'" />';
 }
 if ($xml1[Items][Item][SmallImage][URL]){
-    if (!file_exists("/kunden/115002_90607/buch/images/small/$ISBN.jpg")) {
-    copy($xml1[Items][Item][SmallImage][URL], "/kunden/115002_90607/buch/images/small/$ISBN.jpg");
+    if (!file_exists("/kunden/115002_90607/buch/mybooks/images/small/$ISBN.jpg")) {
+        copy($xml1[Items][Item][SmallImage][URL], "/kunden/115002_90607/buch/mybooks/images/small/$ISBN.jpg");
     }
-    echo '<img src="http://book.fabi.ws/images/small/'.$ISBN.'.jpg" alt="'.$ISBN.'" /><br />';
+    echo '<img src="http://book.fabi.ws/mybooks/images/small/'.$ISBN.'.jpg" alt="'.$ISBN.'" /><br />';
 }
 if (count($xml1[Items][Item][EditorialReviews][EditorialReview]) > 0) {
 
@@ -88,9 +114,13 @@ if (count($xml1[Items][Item][EditorialReviews][EditorialReview]) > 0) {
 $data = $xml1[Items][Item][ItemAttributes];
 echo  "<br /><br />";
 foreach ($data as $key => $value) {
-   echo $key.":  ".$value."<br />";
+    echo $key.":  ".$value."<br />";
 
-}
+}*/
+
+
+
+
 
 
 echo "
