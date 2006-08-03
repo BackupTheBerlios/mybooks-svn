@@ -16,7 +16,7 @@
  * @author     Fabian Mruck <norge@berlios.de>
  * @copyright  2006 Fabian Mruck
  * @license    http://opensource.org/licenses/gpl-license.php GNU Public License
- * @version    SVN: $Id:s$
+ * @version    SVN: $Id:$
  */
 require_once('includes/isbn.php');
 require_once('includes/main.php');
