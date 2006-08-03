@@ -55,22 +55,22 @@ $xml1 = simplexml2array($xml);
 
 echo '<a href="'.$xml1[Items][Item][DetailPageURL].'">Buch bei Amazon kaufen</a><br />';
 if ($xml1[Items][Item][LargeImage][URL]){
-    if (!file_exists("/kunden/115002_90607/buch/jpg/large/$ISBN.jpg")) {
-    copy($xml1[Items][Item][LargeImage][URL], "/kunden/115002_90607/buch/jpg/large/$ISBN.jpg");
+    if (!file_exists("/kunden/115002_90607/buch/images/large/$ISBN.jpg")) {
+    copy($xml1[Items][Item][LargeImage][URL], "/kunden/115002_90607/buch/images/large/$ISBN.jpg");
     }
-    echo '<img src="http://book.fabi.ws/jpg/large/'.$ISBN.'.jpg" alt="'.$ISBN.'" />';
+    echo '<img src="http://book.fabi.ws/images/large/'.$ISBN.'.jpg" alt="'.$ISBN.'" />';
 }
 if ($xml1[Items][Item][MediumImage][URL]){
-    if (!file_exists("/kunden/115002_90607/buch/jpg/medium/$ISBN.jpg")) {
-    copy($xml1[Items][Item][MediumImage][URL], "/kunden/115002_90607/buch/jpg/medium/$ISBN.jpg");
+    if (!file_exists("/kunden/115002_90607/buch/images/medium/$ISBN.jpg")) {
+    copy($xml1[Items][Item][MediumImage][URL], "/kunden/115002_90607/buch/images/medium/$ISBN.jpg");
     }
-    echo '<img src="http://book.fabi.ws/jpg/medium/'.$ISBN.'.jpg" alt="'.$ISBN.'" />';
+    echo '<img src="http://book.fabi.ws/images/medium/'.$ISBN.'.jpg" alt="'.$ISBN.'" />';
 }
 if ($xml1[Items][Item][SmallImage][URL]){
-    if (!file_exists("/kunden/115002_90607/buch/jpg/small/$ISBN.jpg")) {
-    copy($xml1[Items][Item][SmallImage][URL], "/kunden/115002_90607/buch/jpg/small/$ISBN.jpg");
+    if (!file_exists("/kunden/115002_90607/buch/images/small/$ISBN.jpg")) {
+    copy($xml1[Items][Item][SmallImage][URL], "/kunden/115002_90607/buch/images/small/$ISBN.jpg");
     }
-    echo '<img src="http://book.fabi.ws/jpg/small/'.$ISBN.'.jpg" alt="'.$ISBN.'" /><br />';
+    echo '<img src="http://book.fabi.ws/images/small/'.$ISBN.'.jpg" alt="'.$ISBN.'" /><br />';
 }
 if (count($xml1[Items][Item][EditorialReviews][EditorialReview]) > 0) {
 
