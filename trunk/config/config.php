@@ -25,4 +25,9 @@ define("AMAZONID", 'AmazonSubscriptionId');
 
 //Definieren der URL der Hompage
 define("URL", 'http://example.com');
+
+//Definieren des Serverpfades
+define("PATH", '/var/htdocs');
+
+
 ?>
